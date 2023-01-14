@@ -39,7 +39,7 @@ import LazyLoad from 'react-load-lazily'
 ```sh
 // Run custom logic once component is visible on viewport
 
-<LazyLoad onVisiblie={()=> console.log('visible')}>
+<LazyLoad onVisible={()=> console.log('visible')}>
   <MyComponent>
 </LazyLoad>
 ```

@@ -26,7 +26,7 @@ function App() {
         component={<Mountain />}
         height='500px'
         threshold={0.5}
-        onVisiblie={() => window.alert('component loaded lazily')}
+        onVisible={() => window.alert('component loaded lazily')}
       />
     </div>
   )

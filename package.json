@@ -1,6 +1,6 @@
 {
   "name": "react-load-lazily",
-  "version": "0.1.13",
+  "version": "0.1.16",
   "private": false,
   "main": "src/index.js",
   "description": "A tiny library to load anything lazily in react.",
@@ -9,8 +9,8 @@
     "react-dom": "^18.2.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,6 +35,11 @@
       "last 1 safari version"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamsarajpitani/react-load-lazily"
+  },
+  "homepage": "https://github.com/hamsarajpitani/react-load-lazily",
   "keywords": [
     "react",
     "reactjs",

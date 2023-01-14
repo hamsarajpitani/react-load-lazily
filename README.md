@@ -8,7 +8,7 @@
   </a>
 </p>
 
-> Reacy-load-lazily is an tiny library to load any component or html element only when user scroll reaches the element position on viewport.
+> React-load-lazily is an tiny library to load any component or html element only when user scroll reaches the element position on viewport.
 
 ## Install
 
@@ -23,7 +23,7 @@ import LazyLoad from 'react-load-lazily'
 ```
 
 ```sh
-// if not passed default threshold value is 0.5 = 50%
+// If not passed default threshold value is 0.5 = 50%
  (loads component when its 50% visible in viewport view).
 
 <LazyLoad threshold={0.9}>
@@ -35,9 +35,17 @@ import LazyLoad from 'react-load-lazily'
  ```
 
 ## Additional Properties
+<!--
+```sh
+// Run custom logic once component is visible on viewport
+
+<LazyLoad onVisiblie={()=> console.log('visible')}>
+  <MyComponent>
+</LazyLoad>
+``` -->
 
 ```sh
-// use predefined height and width for better CLS (cumulative layout shift) score.
+// Use predefined height and width for better CLS (cumulative layout shift) score.
 
 <LazyLoad height="500px" width="90%">
   <MyComponent>
@@ -45,7 +53,7 @@ import LazyLoad from 'react-load-lazily'
 ```
 
 ```sh
-// supported ways of styling and custom props.
+// Supported ways of styling and custom props.
 
 <LazyLoad styles={{ borderRadius:'10px' }} className="mb-10 bg-red-400" id="myComponent" custom="custom">
   <MyComponent>

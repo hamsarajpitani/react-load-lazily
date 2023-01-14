@@ -5,7 +5,7 @@ const LazyLoad = ({
   height,
   width,
   style,
-  onVisibile,
+  onVisible,
   component,
   children,
   ...props
@@ -24,7 +24,7 @@ const LazyLoad = ({
         if (entry.isIntersecting) {
           observer.disconnect()
           // eslint-disable-next-line no-unused-expressions
-          onVisibile?.()
+          onVisible?.()
           setLoad(true)
         }
       },
@@ -36,7 +36,8 @@ const LazyLoad = ({
     return () => {
       observer.disconnect()
     }
-  }, [onVisibile, threshold])
+  }, [threshold])
+
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
     <div {...styleProps} {...props} ref={ref}>

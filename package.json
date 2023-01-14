@@ -1,6 +1,6 @@
 {
   "name": "react-load-lazily",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "A tiny library to load anything lazily in react.",
   "author": "hamsarajpitani",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "rm -rf dist/ && microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -26,6 +26,13 @@
   "peerDependencies": {
     "react": "^16.0.0"
   },
+  "keywords": [
+    "react",
+    "reactjs",
+    "load",
+    "lazy",
+    "react-component"
+  ],
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",

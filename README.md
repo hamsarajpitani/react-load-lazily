@@ -8,7 +8,7 @@
   </a>
 </p>
 
-> Reacy-load-lazily is an tiny library to load any component or html element only when user scroll reaches the element position on viewport.
+> React-load-lazily is an tiny library to load any component or html element only when user scroll reaches the element position on viewport.
 
 ## Install
 

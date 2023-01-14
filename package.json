@@ -1,6 +1,6 @@
 {
   "name": "react-load-lazily",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "private": false,
   "main": "src/index.js",
   "description": "A tiny library to load anything lazily in react.",

@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to react-load-lazily 👋</h1>
+<h1 align="center">Welcome to react-load-lazily 🦥</h1>
 <p>
   <a href="https://www.npmjs.com/package/react-load-lazily" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/react-load-lazily.svg">
@@ -8,58 +8,89 @@
   </a>
 </p>
 
-> React-load-lazily is an tiny library to load any component or html element only when user scroll reaches the element position on viewport.
+> React-load-lazily is an tiny library to load any component or any html element ( only when user scroll reaches the element position on viewport )
 
-## Install
+- ✅ Uses IntersectionObserver API natively present in the browser.
+- 📦 Lightweight ~ 1.5KB minified & gzipped (7xxKb)
+- 🚀 Easy to use
 
-```sh
-npm i react-load-lazily
+## Installation
+
+```
+npm install react-load-lazily --save
+```
+```
+yarn add react-load-lazily
 ```
 
-## Usage
+## How to use
 
-```sh
-import LazyLoad from 'react-load-lazily'
+```js
+import LazyLoad from 'react-load-lazily';
 ```
+### Passing component as children
 
-```sh
-// If not passed default threshold value is 0.5 = 50%
- (loads component when its 50% visible in viewport view).
-
-<LazyLoad threshold={0.9}>
+```js
+<LazyLoad>
   <MyComponent>
 </LazyLoad>
 ```
-```sh
-<LazyLoad threshold={0.9} component={<MyComponent>}/>
+### Passing component as props
+
+```js
+<LazyLoad component={<MyComponent>}/>
  ```
+## Calculating the visibility area
+```sh
+Load component when it is 50% visible in viewport based on height and width provided to which browser to calcualte the visibility area.
+
+The default height & width is 0 meaning as soon as even one pixel is visible it load's component
+```
+
+```js
+<LazyLoad
+  height="50px"
+  width="100%"
+  threshold={0.5} // default value 0.1 = 10%
+>
+  <MyComponent>
+</LazyLoad>
+```
+
+<!-- ### Styling component prior to loading. -->
+
+<!-- #### Use predefined height and width props -->
+
+<!-- ```js
+<LazyLoad height="500px" width="90%">
+  <MyComponent>
+</LazyLoad>
+``` -->
+### Choose your own way of styling
+
+```js
+<LazyLoad styles={{ borderRadius:'10px' }} className="mb-10 bg-red-400" id="myComponent">
+  <MyComponent>
+</LazyLoad>
+```
 
 ## Additional Properties
 
-```sh
-// Run custom logic once component is visible on viewport
+### Run custom logic once component is visible on viewport
 
+```js
 <LazyLoad onVisible={()=> console.log('visible')}>
   <MyComponent>
 </LazyLoad>
 ```
+## What else
 
-```sh
-// Use predefined height and width for better CLS (cumulative layout shift) score.
-
-<LazyLoad height="500px" width="90%">
+### Pass your own custom props
+```js
+<LazyLoad id="sample">
   <MyComponent>
 </LazyLoad>
 ```
-
-```sh
-// Supported ways of styling and custom props.
-
-<LazyLoad styles={{ borderRadius:'10px' }} className="mb-10 bg-red-400" id="myComponent" custom="custom">
-  <MyComponent>
-</LazyLoad>
-```
-
 ## Author
 
 👤 **Hamsaraj**

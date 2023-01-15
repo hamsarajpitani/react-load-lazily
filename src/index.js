@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const LazyLoad = ({
-  threshold = 0.5,
+  threshold = 0.1,
   height,
   width,
   style,

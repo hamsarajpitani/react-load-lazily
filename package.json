@@ -1,6 +1,6 @@
 {
   "name": "react-load-lazily",
-  "version": "0.1.27",
+  "version": "1.0.0",
   "description": "A tiny library to load anything lazily in react.",
   "author": "hamsarajpitani",
   "license": "MIT",
@@ -31,7 +31,9 @@
     "reactjs",
     "load",
     "lazy",
-    "react-component"
+    "react-component",
+    "intersection",
+    "observer"
   ],
   "devDependencies": {
     "microbundle-crl": "^0.13.10",

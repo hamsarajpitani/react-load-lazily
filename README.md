@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to react-load-lazily 👋</h1>
+<h1 align="left">Welcome to react-load-lazily 🦥</h1>
 <p>
   <a href="https://www.npmjs.com/package/react-load-lazily" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/react-load-lazily.svg">
@@ -8,54 +8,91 @@
   </a>
 </p>
 
-> React-load-lazily is an tiny library to load any component or html element only when user scroll reaches the element position on viewport.
+> React-load-lazily is an tiny library to load any component or any html element ( only when user scroll reaches the element position on viewport )
 
-## Install
+- ✅ Uses IntersectionObserver API natively present in the browser.
+- 📦 Lightweight ~ 1.5KB minified & gzipped (7xxKb)
+- 🚀 Easy to use
 
-```sh
-npm i react-load-lazily
+## Installation
+
+```
+npm install react-load-lazily --save
 ```
 
-## Usage
+```
+yarn add react-load-lazily
+```
 
-```sh
+## How to use
+
+```js
 import LazyLoad from 'react-load-lazily'
 ```
 
-```sh
-// If not passed default threshold value is 0.5 = 50%
- (loads component when its 50% visible in viewport view).
+### Passing component as children
 
-<LazyLoad threshold={0.9}>
+```js
+<LazyLoad>
   <MyComponent>
 </LazyLoad>
 ```
-```sh
-<LazyLoad threshold={0.9} component={<MyComponent>}/>
- ```
+
+### Passing component as props
+
+```js
+<LazyLoad component={<MyComponent>}/>
+```
+
+## Calculating the visibility area
+
+### threshold
+
+`threshold` requires `height` and `width` properties to be specified which allows browser to calculate the visibility area.
+
+> **Note**<br>
+> when `height` and `width` specified The default is none (meaning as soon as even one pixel of component is visible, the component will be loaded)
+
+Default: v0.x `0.5` --> v1.x > `0.1`
+
+`threshold={0.1}` load only after 10% of component is visible in viewport.
+
+`threshold={0.5}` load only after 50% of component is visible in viewport.
+
+`threshold={1}` load only after 100% of component is visible in viewport.
+
+```js
+<LazyLoad threshold={0.5} height="500px" width="100vw">
+  <MyComponent>
+</LazyLoad>
+```
+### Choose your own way of styling
+
+```js
+<LazyLoad threshold={0.5}  styles={{ height:'100px' , width:'500px' }} className="h-12 w-full" id="myComponent">
+  <MyComponent>
+</LazyLoad>
+```
 
 ## Additional Properties
 
-```sh
-// Run custom logic once component is visible on viewport
+### Run custom logic once component is visible on viewport
 
-<LazyLoad onVisible={()=> console.log('visible')}>
+```js
+<LazyLoad onVisible={()=> {
+   window.alert('visible')
+   }}
+>
   <MyComponent>
 </LazyLoad>
 ```
 
-```sh
-// Use predefined height and width for better CLS (cumulative layout shift) score.
+## What else
 
-<LazyLoad height="500px" width="90%">
-  <MyComponent>
-</LazyLoad>
-```
+### Pass your own custom props
 
-```sh
-// Supported ways of styling and custom props.
-
-<LazyLoad styles={{ borderRadius:'10px' }} className="mb-10 bg-red-400" id="myComponent" custom="custom">
+```js
+<LazyLoad onClick={...} onHover={...}>
   <MyComponent>
 </LazyLoad>
 ```
@@ -64,12 +101,11 @@ import LazyLoad from 'react-load-lazily'
 
 👤 **Hamsaraj**
 
-* Github: [@hamsarajpitani](https://github.com/hamsarajpitani)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/pitani-hamsaraj\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/pitani-hamsaraj\/)
+- Github: [@hamsarajpitani](https://github.com/hamsarajpitani)
+- LinkedIn: [@pitani-hamsaraj](https://linkedin.com/in/pitani-hamsaraj/)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+---

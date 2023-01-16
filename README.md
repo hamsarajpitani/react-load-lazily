@@ -1,4 +1,4 @@
-<h1 align="left">Welcome to react-load-lazily 🦥</h1>
+<h1 align="center">Welcome to react-load-lazily 🦥</h1>
 <p>
   <a href="https://www.npmjs.com/package/react-load-lazily" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/react-load-lazily.svg">
@@ -8,7 +8,7 @@
   </a>
 </p>
 
-> React-load-lazily is an tiny library to load any component or any html element ( only when user scroll reaches the element position on viewport )
+> React-load-lazily is a Tiny library that allows you to load any component or HTML element only when the user scrolls to its position on the viewport.
 
 - ✅ Uses IntersectionObserver API natively present in the browser.
 - 📦 Lightweight ~ 1.5KB minified & gzipped (7xxKb)
@@ -44,22 +44,21 @@ import LazyLoad from 'react-load-lazily'
 <LazyLoad component={<MyComponent>}/>
 ```
 
-## Calculating the visibility area
+<!-- ## Calculating the visibility area -->
 
-### threshold
+## Threshold
 
-`threshold` requires `height` and `width` properties to be specified which allows browser to calculate the visibility area.
+`Default`: `0.1`
 
-> **Note**<br>
-> when `height` and `width` specified The default is none (meaning as soon as even one pixel of component is visible, the component will be loaded)
+> The threshold property can be used to specify the percentage of the element that must be visible before it is loaded, with the `default` threshold set at `0.1` (or 10%).
 
-Default: v0.x `0.5` --> v1.x > `0.1`
+`threshold={0.5}` Load the component when 50% of it is visible.
 
-`threshold={0.1}` load only after 10% of component is visible in viewport.
+`threshold={1}` Load the component when 100% of it is visible
 
-`threshold={0.5}` load only after 50% of component is visible in viewport.
+>**Note**<br>
+> When the `height` and `width` properties are not specified, the default is set to none, meaning that the component will be loaded as soon as even one pixel of the element is visible on the viewport.
 
-`threshold={1}` load only after 100% of component is visible in viewport.
 
 ```js
 <LazyLoad threshold={0.5} height="500px" width="100vw">
@@ -74,9 +73,11 @@ Default: v0.x `0.5` --> v1.x > `0.1`
 </LazyLoad>
 ```
 
-## Additional Properties
+<!-- ## Additional Properties -->
 
-### Run custom logic once component is visible on viewport
+## Run custom logic
+
+#### Use `onVisible` prop to run custom logic when component is visible.
 
 ```js
 <LazyLoad onVisible={()=> {
@@ -89,7 +90,7 @@ Default: v0.x `0.5` --> v1.x > `0.1`
 
 ## What else
 
-### Pass your own custom props
+### Pass your own props
 
 ```js
 <LazyLoad onClick={...} onHover={...}>

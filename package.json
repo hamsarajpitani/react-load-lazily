@@ -1,7 +1,7 @@
 {
   "name": "react-load-lazily",
   "version": "1.0.0",
-  "description": "A tiny library to load anything lazily in react.",
+  "description": "A tiny library for lazily loading any content in React",
   "author": "hamsarajpitani",
   "license": "MIT",
   "repository": "hamsarajpitani/react-load-lazily",
